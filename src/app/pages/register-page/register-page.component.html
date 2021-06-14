@@ -1,0 +1,161 @@
+<div class="limiter">
+
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+					<span class="login100-form-title">
+						Register
+					</span>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+                    <input
+                            class="input100"
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            formControlName="username"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div  *ngIf="username.invalid && (username.dirty || username.touched)">
+
+                    <div *ngIf="username.errors?.required" class="alert alert-danger">
+                        Username is required
+                    </div>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
+                    <input
+                            class="input100"
+                            type="password"
+                            name="pass"
+                            placeholder="Password"
+                            formControlName="password"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div  *ngIf="password.invalid && (password.dirty || password.touched)">
+
+                    <div *ngIf="password.errors?.required" class="alert alert-danger">
+                        Password is required
+                    </div>
+
+                    <div *ngIf="password.errors?.minlength" class="alert alert-danger">
+                        Password must be 8 characters or more
+                    </div>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
+                    <input
+                            class="input100"
+                            type="password"
+                            name="repass"
+                            placeholder="Retype Password"
+                            formControlName="rePassword"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div  *ngIf="rePassword.invalid && (rePassword.dirty || rePassword.touched)">
+
+                    <div *ngIf="rePassword.errors?.required" class="alert alert-danger">
+                        Retype password is required
+                    </div>
+
+                </div>
+
+                <div *ngIf="(rePassword.dirty || rePassword.touched) && rePassword.valid && registerForm.errors?.passwordNotMatch" class="alert alert-danger">
+                    Password do not match
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter email">
+                    <input
+                            class="input100"
+                            name="repass"
+                            placeholder="Email"
+                            formControlName="email"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div *ngIf="(email.dirty || email.touched) && email.invalid && email.errors?.required" class="alert alert-danger">
+                    Email is required
+                </div>
+
+                <div *ngIf="(email.dirty || email.touched) && email.invalid && email.errors?.email" class="alert alert-danger">
+                    Please enter your email
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16">
+                    <input
+                            class="input100"
+                            name="repass"
+                            placeholder="Last Name"
+                            formControlName="lastName"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div *ngIf="(lastName.dirty || lastName.touched) && lastName.invalid && lastName.errors?.required" class="alert alert-danger">
+                    Last Name is required
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16">
+                    <input
+                            class="input100"
+                            name="repass"
+                            placeholder="First Name"
+                            formControlName="firstName"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div *ngIf="(firstName.dirty || firstName.touched) && firstName.invalid && firstName.errors?.required" class="alert alert-danger">
+                    First Name is required
+                </div>
+
+                <div class="container-login100-form-btn" >
+                    <button class="login100-form-btn btn btn-success " [disabled]="registerForm.invalid || isLoading">
+                        <span *ngIf="isLoading" class="spinner-border m-5" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </span>
+                        Register
+                    </button>
+                </div>
+
+                <div class="flex-col-c p-t-80 p-b-40">
+						<span class="txt1 p-b-9">
+							Already have an account?
+						</span>
+
+                    <a class="txt3" [routerLink]="['/login']">
+                        Login now
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<notifier-container></notifier-container>
+
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/bootstrap/js/popper.js"></script>
+<script src="../../shared/authpagestyle/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/daterangepicker/moment.min.js"></script>
+<script src="../../shared/authpagestyle/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/js/main.js"></script>

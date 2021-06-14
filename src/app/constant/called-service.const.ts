@@ -1,0 +1,22 @@
+import {environment} from '../../environments/environment';
+
+export const host = environment.apiUrl;
+export const externalContext = '/external';
+export const addTemplateEndpoint = '/template/add';
+export const loginEndpoint = '/auth/login';
+export const logoutEndpoint = '/auth/logout';
+export const registerEndpoint = '/auth/sign-up';
+export const changePasswordEndpoint = '/auth/changepassword';
+export const refreshEndpoint = '/auth/refresh';
+export const verifyRegisterEndpoint = '/auth/verify';
+export const resetPasswordEndPoint = '/auth/reset';
+export const recoverPasswordEndpoint = '/auth/forgot';
+export const getAllTemplateEndpoint = '/template';
+export const getChildTemplateEndpoint = '/template_child';
+export const getParentTemplateEndpoint = '/template_parent';
+export const getSingleTemplateEndpoint = '/template';
+export const updateSingleTemplateEndpoint = '/template';
+export const createTemplateEndpoint = '/template';
+export const deleteTemplateEndpoint = '/template';
+export const getAllDocumentEndpoint = '/document';
+export const getDocumentByTemplateEndpoint = '/document_temp';

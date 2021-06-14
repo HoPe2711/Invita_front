@@ -1,0 +1,68 @@
+<div class="limiter">
+
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" [formGroup]="forgotPassForm" (ngSubmit)="onSubmit()">
+					<span class="login100-form-title">
+						Forgot Password
+					</span>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter email">
+                    <input
+                            class="input100"
+                            name="repass"
+                            placeholder="Email"
+                            formControlName="email"
+                    >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div *ngIf="(email.dirty || email.touched) && email.invalid && email.errors?.required" class="alert alert-danger">
+                    Email is required
+                </div>
+
+                <div *ngIf="(email.dirty || email.touched) && email.invalid && email.errors?.email" class="alert alert-danger">
+                    Please enter your email
+                </div>
+
+                <div class="container-login100-form-btn" >
+                    <button class="login100-form-btn btn btn-success " [disabled]="forgotPassForm.invalid || isLoading">
+                        <span *ngIf="isLoading" class="spinner-border m-5" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </span>
+                        Get my recover email
+                    </button>
+                </div>
+
+                <div class="flex-col-c p-t-170 p-b-40">
+						<span class="txt1 p-b-9">
+							Already have an account?
+						</span>
+
+                    <a class="txt3" [routerLink]="['/login']">
+                        Login now
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<notifier-container></notifier-container>
+
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/bootstrap/js/popper.js"></script>
+<script src="../../shared/authpagestyle/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/daterangepicker/moment.min.js"></script>
+<script src="../../shared/authpagestyle/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="../../shared/authpagestyle/js/main.js"></script>

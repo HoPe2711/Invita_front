@@ -1,0 +1,17 @@
+<div style="width: 100%; height: 100%; text-align: center">
+    <img src="assets/img/confirm-back.jpg" alt="image" height="100%" style="opacity: 0.6;"/>
+    <div *ngIf="!isLoading && isSuccess" style="width: 100%; text-align: center; font-weight: bold; position: absolute; top: 20%">
+        <h1> Account was successfully confirm </h1>
+        <button class="btn btn-success" [routerLink]="['/login']"> Login Now ! </button>
+    </div>
+
+    <div *ngIf="isLoading" style="width: 100%; text-align: center; font-weight: bold; position: absolute; top: 20%">
+        <h1> Please wait ....  </h1>
+    </div>
+
+    <div *ngIf="!isLoading && !isSuccess" style="width: 100%; text-align: center; font-weight: bold; position: absolute; top: 20%">
+        <h1> Something wrong =( </h1>
+        <button class="btn btn-success" (click)="onRefresh()"> Retry </button>
+        <button class="btn btn-success" [routerLink]="['/register']"> Register Again </button>
+    </div>
+</div>

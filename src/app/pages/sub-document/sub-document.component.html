@@ -1,0 +1,76 @@
+<div class= "card">
+    <div class="card-body">
+        <form>
+            <div class="row">
+                <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="choosing-template"> Choosing Your Template</label>
+                        <select
+                                [(ngModel)]="recentTemplate"
+                                (ngModelChange)="ngChangeTemplate()" class="custom-select"
+                                id="choosing-template"
+                                [ngModelOptions]="{standalone: true}"
+                        >
+                            <option *ngFor="let template of listTemplate | async" [ngValue]="template">
+                                {{template.templateName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="choosing-feedback"> Choosing Your Feedback</label>
+                        <select
+                                [(ngModel)]="recentFeedback"
+                                (ngModelChange)="ngChangeFeedback()" class="custom-select"
+                                id="choosing-feedback"
+                                [ngModelOptions]="{standalone: true}"
+                        >
+                            <option *ngFor="let feedback of listFeedback | async" [ngValue]="feedback">
+                                {{feedback.templateName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form>
+            <div class="col-md-12 pr-1">
+                <div class="form-group">
+                    <label for="choosing-document" [hidden]="(listDocument | async)?.length == 0">Choose Your Document: </label>
+                    <div *ngFor="let document of listDocument| async">
+                        <label>
+                            <input type="checkbox"
+                                   id="choosing-document"
+                                   value="document"
+                                   [(ngModel)]="check[document.id]"
+                                   (change)="onCheckboxChange($event.target, document.id)"
+                                   [ngModelOptions]="{standalone: true}">
+                            {{document.documentName}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div *ngIf="content" [innerHTML]="content"></div>
+        <div class="col-md-12 pl-0">
+            <button type="button"
+                    class="btn btn-success"
+                    (click)="onSubmit()">
+                <i class="fa fa-cogs"></i>
+                Generate
+            </button>
+            <button
+                    class="btn btn-success"
+                    (click)="exportAsPDF('document-invitation');"
+                    style="width: 200px"
+            >
+                <i class="fa fa-download"></i>
+                Download All
+            </button>
+        </div>
+    </div>
+</div>
+<div class="card">
+</div>

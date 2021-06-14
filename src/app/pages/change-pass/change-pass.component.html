@@ -1,0 +1,86 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title"> Change Password </h4>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="changePasswordForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-10 pr-1">
+                    <div class="form-group">
+                        <label for="old-password"> Old Password </label>
+                        <input
+                                class="form-control"
+                                id="old-password"
+                                formControlName="oldPassword"
+                                type="password"
+                        />
+                    </div>
+                </div>
+
+                <div  *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)" class="col-md-10 pr-1">
+
+                    <div *ngIf="oldPassword.errors?.required" class="alert alert-danger">
+                        Old password is required
+                    </div>
+
+                    <div *ngIf="oldPassword.errors?.minlength" class="alert alert-danger">
+                        Length of password is more than 8
+                    </div>
+
+                </div>
+
+                    <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="new-password"> New Password </label>
+                        <input
+                                class="form-control"
+                                id="new-password"
+                                formControlName="newPassword"
+                                type="password"
+                        />
+                    </div>
+                </div>
+
+
+                <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="verify-new-password"> Verify New Password </label>
+                        <input
+                                class="form-control"
+                                id="verify-new-password"
+                                formControlName="verifyNewPassword"
+                                type="password"
+                        />
+                    </div>
+                </div>
+
+                <div  *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched)" class="col-md-5 pr-1">
+
+                    <div *ngIf="newPassword.errors?.required" class="alert alert-danger">
+                        New password is required
+                    </div>
+
+                    <div *ngIf="newPassword.errors?.minlength" class="alert alert-danger">
+                        Length of password is more than 8
+                    </div>
+
+                </div>
+
+                <div  *ngIf="newPassword.valid && verifyNewPassword.dirty || verifyNewPassword.touched" class="col-md-5 pr-1">
+
+                    <div *ngIf="changePasswordForm.errors?.passwordNotMatch" class="alert alert-danger">
+                        Password is not match
+                    </div>
+
+                </div>
+
+                <div class="col-md-10 pr-1">
+                    <button type="submit" class="btn btn-primary" [disabled]="changePasswordForm.invalid">
+                        <i class="fas fa-save"></i>
+                        Change Password
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

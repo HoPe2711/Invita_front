@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-header">
+        <h1> {{headerText}} </h1>
+    </div>
+
+    <div class="card-body" style="width: 100%">
+
+        <form [formGroup]="newTemplateForm" (ngSubmit)="ngOnSave()">
+            <div class="row">
+                <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="templateName"> Template Name: </label>
+                        <input
+                                id="templateName"
+                                class="form-control"
+                                placeholder="Enter Template Name"
+                                formControlName="templateName"
+                        />
+                    </div>
+                </div>
+                <div class="col-md-5 pr-1">
+                    <div class="form-group">
+                        <label for="choosing-template"> Choosing Your Template</label>
+                        <select
+                                [(ngModel)]="recentTemplate"
+                                (ngModelChange)="ngChangeTemplate()" class="custom-select"
+                                id="choosing-template"
+                                [ngModelOptions]="{standalone: true}"
+                        >
+                            <option *ngFor="let template of listTemplate | async" [ngValue]="template">
+                                {{template.templateName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div *ngIf="templateName.invalid && (templateName.dirty || templateName.touched)"
+                     class="col-md-5 pr-1">
+
+                    <div *ngIf="templateName.errors?.required" class="alert alert-danger">
+                        Template Name is required
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div *ngIf="content" [innerHTML]="content"></div>
+
+            <div class="row">
+                <div class="code-editor" #codeEditor style="width: 96%; margin-top: 30px; margin-left: 2%"></div>
+            </div>
+
+            <div class="btn btn-success" (click)="beautifyContent()">
+                Beautify Code
+            </div>
+
+            <div class="btn btn-success" (click)="ngOnReview()">
+                View Template
+            </div>
+
+            <div class="row">
+                <div style="border: 1px solid; width: 96%; margin-top: 30px; margin-left: 2%"
+                     *ngIf="reviewTemplate" [innerHTML]="reviewTemplate" id="template-review"></div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success" [disabled]="templateName.invalid">
+                Save
+            </button>
+
+        </form>
+
+    </div>
+</div>
+

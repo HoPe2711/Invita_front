@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header">
+    </div>
+    <a class="btn btn-primary col-2" style="margin-left: 20px" [routerLink]="['/document-management', 'new']">
+        <i class="fas fa-plus-square"></i>
+        Create Document
+    </a>
+
+    <div style="width: 100%; " *ngIf="isLoading">
+        <mat-spinner></mat-spinner>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">
+                <th>
+                    Document Name
+                </th>
+                <th>
+                    Template Name
+                </th>
+                <th>
+                    Note
+                </th>
+                <th>
+                    Actions
+                </th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let document of listDocument | async" >
+                    <td>
+                        {{document.documentName}}
+                    </td>
+                    <td>
+                        {{document?.invitaTemplate?.templateName}}
+                    </td>
+                    <td>
+                        {{document.note }}
+                    </td>
+                    <td>
+                        <div class="row">
+                            <a class="btn btn-primary col-4" [routerLink]="['/document-management', document.id]">
+                                <i class="far fa-edit"></i>
+                                Edit
+                            </a>
+                            <div class="col-1"></div>
+                            <a class="btn btn-warning col-4" (click)="ngOnDeleteDocument(document.id)">
+                                <i class="fas fa-trash-alt"></i>
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
