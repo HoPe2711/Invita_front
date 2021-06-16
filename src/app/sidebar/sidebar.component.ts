@@ -15,6 +15,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/document-management', title: 'Documents', icon: 'nc-paper', class: '', restrictedRole: []},
     { path: '/sub-document', title: 'Feedback', icon: 'nc-paper', class: '', restrictedRole: []},
     { path: '/change-pass', title: 'Change Password', icon: 'nc-lock-circle-open', class: '', restrictedRole: []},
+    { path: '/user-management', title: 'Person', icon: 'nc-single-02', class: '', restrictedRole: ['ROLE_ADMIN']},
     { path: '/template-management', title: 'Template', icon: 'nc-air-baloon', class: '', restrictedRole: ['ROLE_ADMIN']}
 ];
 
@@ -31,8 +32,8 @@ export class SidebarComponent implements OnInit {
     onLogout = () => {
         this.authService.logout(localStorage.getItem('refreshToken')).subscribe(data => {
                 console.log(data);
+                localStorage.removeItem('roles');
                 localStorage.removeItem('token');
-                localStorage.removeItem('refreshToken')
                 this._snack.open('Successfully logout !', 'Confirm', {
                 duration: 2000
             });

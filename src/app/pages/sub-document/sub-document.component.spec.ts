@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SubDocumentComponent } from './sub-document.component';
+import {SubDocumentComponent} from './sub-document.component';
 
 describe('SubDocumentComponent', () => {
   let component: SubDocumentComponent;

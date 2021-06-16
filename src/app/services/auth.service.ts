@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 // tslint:disable-next-line:max-line-length
 import {
   changePasswordEndpoint,
   host,
   loginEndpoint,
-  registerEndpoint,
-  verifyRegisterEndpoint,
-  resetPasswordEndPoint,
+  logoutEndpoint,
   recoverPasswordEndpoint,
-  logoutEndpoint, refreshEndpoint
+  registerEndpoint,
+  resetPasswordEndPoint,
+  verifyRegisterEndpoint
 } from '../constant/called-service.const';
 import {pluck} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
@@ -52,11 +52,6 @@ export class AuthService {
   confirmEmail = (token) => {
     const url = `${host}${verifyRegisterEndpoint}?token=${token}`;
     return this.http.get(url);
-  }
-
-  refresh = (refreshToken) => {
-    const url = `${host}${refreshEndpoint}`;
-    return this.http.post(url, {refreshToken});
   }
 
   resetPassword = (token, password, rePassword) => {

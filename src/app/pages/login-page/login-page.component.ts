@@ -5,7 +5,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
-    @Component({
+@Component({
         selector: 'app-login-page',
         templateUrl: './login-page.component.html',
         styleUrls: [
@@ -32,7 +32,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
         this.authService.login(this.model.username, this.model.password).subscribe(
             (observer: any) => {
                 console.log(observer);
-                localStorage.setItem('refreshToken', `${observer.refreshToken}`);
                 localStorage.setItem('token', `${observer.type}${observer.token}`);
                 localStorage.setItem('roles', `${observer.roles}`);
                 this.router.navigate(['document-management']).then(r => console.log(r));

@@ -1,0 +1,59 @@
+<div class="card">
+
+    <div class="card-body">
+
+        <div class="container">
+            <table class="table table-bordered">
+                <thead class=" text-primary" style="text-align:center">
+                <th>
+                    Username
+                </th>
+                <th>
+                    Firstname
+                </th>
+                <th>
+                    Lastname
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Actions
+                </th>
+                </thead>
+                <tbody style="font-size: 16px">
+                <tr *ngFor="let user of listUser | async" >
+                    <td>
+                        {{user.username}}
+                    </td>
+                    <td>
+                        {{user.firstName}}
+                    </td>
+                    <td>
+                        {{user.lastName}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.status}}
+                    </td>
+                    <td>
+                        <button style="width: 45%" class="btn btn-primary" >
+                            <span class="far fa-edit"></span>
+                            Edit
+                        </button>
+                        <button style="margin-left: 10%" type="button" class="btn btn-warning" (click)="ngOnDeleteUser(user.id)">
+                            <span class="fas fa-trash-alt"></span>
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

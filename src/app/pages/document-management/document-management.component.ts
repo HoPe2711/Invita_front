@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DocumentService} from '../../services/document.service';
-import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 
 @Component({

@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { AdminSectionGuard } from './admin-section.guard';
+import {AdminSectionGuard} from './admin-section.guard';
 
 describe('AdminSectionGuard', () => {
   let guard: AdminSectionGuard;

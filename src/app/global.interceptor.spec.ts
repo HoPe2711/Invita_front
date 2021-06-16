@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { GlobalInterceptor } from './global.interceptor';
+import {GlobalInterceptor} from './global.interceptor';
 
 describe('GlobalInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({

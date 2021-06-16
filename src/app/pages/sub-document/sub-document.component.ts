@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TemplateService} from '../../services/template.service';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {content} from '../invitation-creator/htmlContent';

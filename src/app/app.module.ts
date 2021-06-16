@@ -17,21 +17,22 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {DocumentManagementComponent} from './pages/document-management/document-management.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import {LoginPageComponent} from './pages/login-page/login-page.component';
+import {RegisterPageComponent} from './pages/register-page/register-page.component';
 import {NotifierModule, NotifierOptions} from 'angular-notifier';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {GlobalInterceptor} from './global.interceptor';
-import { ChangePassComponent } from './pages/change-pass/change-pass.component';
+import {ChangePassComponent} from './pages/change-pass/change-pass.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { ForgotPassComponent } from './pages/forgot-pass/forgot-pass.component';
+import {ForgotPassComponent} from './pages/forgot-pass/forgot-pass.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ConfirmEmailComponent } from './pages/confirm-email/confirm-email.component';
-import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
-import { TemplateManagementComponent } from './pages/template-management/template-management.component';
+import {ConfirmEmailComponent} from './pages/confirm-email/confirm-email.component';
+import {ResetPasswordComponent} from './pages/reset-password/reset-password.component';
+import {TemplateManagementComponent} from './pages/template-management/template-management.component';
 import {MatTableModule} from '@angular/material/table';
-import { TemplateCreatorComponent } from './pages/template-creator/template-creator.component';
-import { SubDocumentComponent } from './pages/sub-document/sub-document.component';
+import {TemplateCreatorComponent} from './pages/template-creator/template-creator.component';
+import {SubDocumentComponent} from './pages/sub-document/sub-document.component';
+import { UserManagementComponent } from './pages/user-management/user-management.component';
 
 const customNotifierOptions: NotifierOptions = {
     position: {
@@ -90,7 +91,8 @@ const customNotifierOptions: NotifierOptions = {
     ResetPasswordComponent,
     TemplateManagementComponent,
     TemplateCreatorComponent,
-    SubDocumentComponent
+    SubDocumentComponent,
+    UserManagementComponent
   ],
     imports: [
         RouterModule.forRoot(AppRoutes, {

@@ -1,11 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {
-  externalContext,
-  getAllTemplateEndpoint,
-  host,
-  deleteTemplateEndpoint,
-  createTemplateEndpoint, getSingleTemplateEndpoint, updateSingleTemplateEndpoint, getChildTemplateEndpoint, getParentTemplateEndpoint
+    createTemplateEndpoint,
+    deleteTemplateEndpoint,
+    externalContext,
+    getAllTemplateEndpoint,
+    getChildTemplateEndpoint,
+    getParentTemplateEndpoint,
+    getSingleTemplateEndpoint,
+    host,
+    updateSingleTemplateEndpoint
 } from '../constant/called-service.const';
 import {pluck} from 'rxjs/operators';
 import {Observable} from 'rxjs';

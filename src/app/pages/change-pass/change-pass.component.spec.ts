@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ChangePassComponent } from './change-pass.component';
+import {ChangePassComponent} from './change-pass.component';
 
 describe('ChangePassComponent', () => {
   let component: ChangePassComponent;

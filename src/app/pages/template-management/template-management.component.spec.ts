@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TemplateManagementComponent } from './template-management.component';
+import {TemplateManagementComponent} from './template-management.component';
 
 describe('TemplateManagementComponent', () => {
   let component: TemplateManagementComponent;

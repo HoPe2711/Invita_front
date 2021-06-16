@@ -1,4 +1,4 @@
-import { PdFreeAngularcliPage } from './app.po';
+import {PdFreeAngularcliPage} from './app.po';
 
 describe('pd-free-angularcli App', () => {
   let page: PdFreeAngularcliPage;
@@ -9,6 +9,7 @@ describe('pd-free-angularcli App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    // @ts-ignore
+    expect(page.getParagraphText()).toEqual(`Welcome to app!!`);
   });
 });

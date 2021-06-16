@@ -7,6 +7,7 @@ import {TemplateManagementComponent} from '../../pages/template-management/templ
 import {TemplateCreatorComponent} from '../../pages/template-creator/template-creator.component';
 import {AdminSectionGuard} from './admin-section.guard';
 import {SubDocumentComponent} from '../../pages/sub-document/sub-document.component';
+import {UserManagementComponent} from '../../pages/user-management/user-management.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'document-management', component: DocumentManagementComponent },
@@ -14,5 +15,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'sub-document', component: SubDocumentComponent},
     { path: 'change-pass', component: ChangePassComponent},
     { path: 'template-management', component: TemplateManagementComponent, canActivate: [AdminSectionGuard]},
+    { path: 'user-management', component: UserManagementComponent, canActivate: [AdminSectionGuard]},
     { path: 'template-management/:id', component: TemplateCreatorComponent, canActivate: [AdminSectionGuard]}
 ];
